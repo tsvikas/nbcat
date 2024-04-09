@@ -62,7 +62,7 @@ def main(
         exporter, lexer_name = SUPPORTED_FORMATS[output_format]
     except KeyError as err:
         typer.echo(f"Unsupported format: {output_format}")
-        raise typer.Exit(code=2) from err
+        raise typer.Exit(code=11) from err
 
     # Convert the notebook to the specified format
     try:
@@ -71,7 +71,7 @@ def main(
         )  # type: ignore[no-untyped-call]
     except Exception as err:  # noqa: BLE001
         typer.echo(f"Error reading notebook: {err}")
-        raise typer.Exit(code=3) from err
+        raise typer.Exit(code=12) from err
     content: str
     content, _resources = nbconvert.export(exporter, nb)  # type: ignore[no-untyped-call]
 
