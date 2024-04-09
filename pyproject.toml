@@ -9,7 +9,7 @@ readme = "README.md"
 repository = "https://github.com/tsvikas/nbcat"
 
 [tool.poetry.scripts]
-my-command = "nbcat.__main__:run"
+nbcat = "nbcat.__main__:app"
 
 [tool.poetry.dependencies]
 python = "~3.12"

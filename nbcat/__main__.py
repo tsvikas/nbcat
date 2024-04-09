@@ -19,7 +19,10 @@ SUPPORTED_FORMATS = {
     "python": (nbconvert.exporters.PythonExporter, "python"),
 }
 
+app = typer.Typer(help="output your notebooks to the terminal.")
 
+
+@app.command()
 def main(
     filename: str,
     output_format: Annotated[str, typer.Option("--format", "-f")] = "markdown",
@@ -58,4 +61,4 @@ def main(
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()
