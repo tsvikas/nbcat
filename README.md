@@ -4,8 +4,9 @@ display your notebooks, in the terminal
 
 ## Usage
 ```bash
-nbcat --help
+nbcat FILENAME -R | less -R
 ```
+use `-f FORMAT` to specify the output format, default is `markdown`
 
 ## Development
 * install git, python3.12, poetry, poethepoet.
