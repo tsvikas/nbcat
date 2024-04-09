@@ -13,7 +13,9 @@ my-command = "nbcat.__main__:run"
 
 [tool.poetry.dependencies]
 python = "~3.12"
-# icecream / snoop / python-devtools / birdseye = "*"
+pygments = "^2.17.2"
+typer = "^0.12.2"
+nbconvert = "^7.16.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24"
@@ -23,7 +25,6 @@ pre-commit = "^3"
 
 [tool.poetry.group.typing.dependencies]
 mypy = "^1"
-# pandas-stubs = "*"
 
 [tool.poetry.group.testing.dependencies]
 pytest = "^8"
@@ -31,18 +32,6 @@ pytest-clarity = "^1"
 pytest-cov = "^4"
 pytest-pretty = "^1"
 pytest-reverse = "^1"
-# pytest-datadir = "^1.5"
-# pytest-regressions = "^2.5"
-# hypothesis = "^6"
-
-# [tool.poetry.group.jupyter.dependencies]
-# jupyterlab = "^4"
-# matplotlib = "*"
-# hvplot = "*"
-# ipywidgets = "*"
-# python-lsp-server = "*"
-# jupytext = "*"
-# # jupyter-collaboration = "^1.2"
 
 
 [tool.poetry-dynamic-versioning]
