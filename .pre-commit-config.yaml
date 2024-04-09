@@ -8,6 +8,7 @@ repos:
       - id: check-shebang-scripts-are-executable
       # git
       - id: check-added-large-files
+        exclude: DEMO.gif
       - id: check-merge-conflict
       # secrets
       - id: detect-private-key
