@@ -1,6 +1,8 @@
 nbcat
 ==========
 display your notebooks, in the terminal
+![Demo](https://github.com/tsvikas/nbcat/blob/main/DEMO.gif)
+
 
 ## Installation
 use pipx to install:
