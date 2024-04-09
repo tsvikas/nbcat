@@ -900,6 +900,20 @@ pytest = ">=4.6"
 testing = ["fields", "hunter", "process-tests", "pytest-xdist", "six", "virtualenv"]
 
 [[package]]
+name = "pytest-datadir"
+version = "1.5.0"
+description = "pytest plugin for test data directories and files"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "pytest-datadir-1.5.0.tar.gz", hash = "sha256:1617ed92f9afda0c877e4eac91904b5f779d24ba8f5e438752e3ae39d8d2ee3f"},
+    {file = "pytest_datadir-1.5.0-py3-none-any.whl", hash = "sha256:34adf361bcc7b37961bbc1dfa8d25a4829e778bab461703c38a5c50ca9c36dc8"},
+]
+
+[package.dependencies]
+pytest = ">=5.0"
+
+[[package]]
 name = "pytest-pretty"
 version = "1.2.0"
 description = "pytest plugin for printing summary data as I want it"
@@ -1497,4 +1511,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "~3.12"
-content-hash = "eabedee461061969ec9effb96b81aaf16de0677dd637ddc65abc08ae0a18e7b5"
+content-hash = "26b6721be4036efd12c277961da03a993b7baa50ed54784ca3153b6eac1c7c1f"
