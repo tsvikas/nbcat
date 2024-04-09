@@ -28,6 +28,7 @@ repos:
       - id: check-yaml
       - id: check-xml
       - id: pretty-format-json
+        exclude: ipynb
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.5.5
     hooks:
