@@ -67,7 +67,6 @@ target-version = "py312"
 select = ["ALL"]
 ignore = [
   # important, unignore when possible:
-  "ANN",      # flake8-annotations
   "D1",       # pydocstyle/undocumented-*
   # needed only in large codebases
   "TD002",    # flake8-todos/missing-todo-author
