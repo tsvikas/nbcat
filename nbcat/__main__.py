@@ -1,6 +1,7 @@
 """Display a Jupyter notebook with syntax highlighting in the terminal."""
 
 import re
+from pathlib import Path
 from typing import Annotated
 
 import nbconvert
@@ -26,7 +27,9 @@ app = typer.Typer()
 
 @app.command()
 def main(
-    filename: Annotated[str, typer.Argument(help="The notebook file to display")],
+    filename: Annotated[
+        Path, typer.Argument(exists=True, help="The notebook file to display")
+    ],
     output_format: Annotated[
         str,
         typer.Option(
@@ -59,12 +62,16 @@ def main(
         exporter, lexer_name = SUPPORTED_FORMATS[output_format]
     except KeyError as err:
         typer.echo(f"Unsupported format: {output_format}")
-        raise typer.Exit(code=1) from err
+        raise typer.Exit(code=2) from err
 
     # Convert the notebook to the specified format
-    nb: nbformat.NotebookNode = nbformat.read(
-        filename, as_version=nbformat.NO_CONVERT
-    )  # type: ignore[no-untyped-call]
+    try:
+        nb: nbformat.NotebookNode = nbformat.read(
+            filename, as_version=nbformat.NO_CONVERT
+        )  # type: ignore[no-untyped-call]
+    except Exception as err:  # noqa: BLE001
+        typer.echo(f"Error reading notebook: {err}")
+        raise typer.Exit(code=3) from err
     content: str
     content, _resources = nbconvert.export(exporter, nb)  # type: ignore[no-untyped-call]
 
