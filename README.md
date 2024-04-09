@@ -2,6 +2,12 @@ nbcat
 ==========
 display your notebooks, in the terminal
 
+## Installation
+use pipx to install:
+```bash
+pipx install git+https://github.com/tsvikas/nbcat.git
+```
+
 ## Usage
 ```bash
 nbcat FILENAME -R | less -R
