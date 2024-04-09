@@ -66,8 +66,6 @@ target-version = "py312"
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
-  # important, unignore when possible:
-  "D1",       # pydocstyle/undocumented-*
   # needed only in large codebases
   "TD002",    # flake8-todos/missing-todo-author
   "TD003",    # flake8-todos/missing-todo-link
@@ -111,6 +109,7 @@ allow-dict-calls-with-keyword-arguments = true
   "INP001",   # flake8-no-pep420/implicit-namespace-package
   "PLR2004",  # PyLint-Refactor/magic-value-comparison
   "S101",     # flake8-bandit/assert
+  "D1",       # pydocstyle/undocumented-*
 ]
 
 

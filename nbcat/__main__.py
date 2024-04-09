@@ -1,3 +1,5 @@
+"""Display a Jupyter notebook with syntax highlighting in the terminal."""
+
 import re
 from typing import Annotated
 
