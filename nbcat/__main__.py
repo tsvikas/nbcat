@@ -19,16 +19,39 @@ SUPPORTED_FORMATS = {
     "python": (nbconvert.exporters.PythonExporter, "python"),
 }
 
-app = typer.Typer(help="output your notebooks to the terminal.")
+app = typer.Typer()
 
 
 @app.command()
 def main(
-    filename: str,
-    output_format: Annotated[str, typer.Option("--format", "-f")] = "markdown",
-    remove_tags: Annotated[str, typer.Option("-t")] = "",
-    force_color: Annotated[bool, typer.Option("-R")] = False,  # noqa: FBT002
+    filename: Annotated[str, typer.Argument(help="The notebook file to display")],
+    output_format: Annotated[
+        str,
+        typer.Option(
+            "--format",
+            "-f",
+            help="The format to convert the notebook to. Supported formats: "
+            + ", ".join(SUPPORTED_FORMATS.keys()),
+        ),
+    ] = "markdown",
+    remove_tags: Annotated[
+        str,
+        typer.Option(
+            "--remove-tags",
+            "-t",
+            help="comma-separated list of HTML tags to remove from the output.",
+        ),
+    ] = "",
+    force_color: Annotated[  # noqa: FBT002
+        bool,
+        typer.Option(
+            "--force-color",
+            "-R",
+            help="Force syntax highlighting even when the output is not a terminal",
+        ),
+    ] = False,
 ) -> None:
+    """Display a notebook with syntax highlighting in the terminal."""
     # set the exporter and laxer name based on the format
     try:
         exporter, lexer_name = SUPPORTED_FORMATS[output_format]
