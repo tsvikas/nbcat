@@ -1,0 +1,22 @@
+[ ] upload to pypi
+
+DOCS
+[x] add gif to show usage in the readme
+[ ] clip the gif
+[ ] add features to readme
+
+TESTS
+[ ] add tests for all modes
+[ ] replace test notebook to https://jupyterbook.org/en/stable/_sources/file-types/notebooks.ipynb
+
+FEATURES
+[ ] add light/dark to output https://pygments-doc.readthedocs.io/en/latest/formatters/terminal.html
+[ ] allow running on online files
+
+TEMPLATE
+[ ] add github action for code quality
+[ ] add changelog generation
+[ ] add auto-release for tags
+[ ] add coverage badge
+[ ] add pypi badge
+[ ] add github action for tests
