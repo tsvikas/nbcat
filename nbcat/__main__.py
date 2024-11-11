@@ -69,7 +69,7 @@ def main(
         nb: nbformat.NotebookNode = nbformat.read(
             filename, as_version=nbformat.NO_CONVERT
         )  # type: ignore[no-untyped-call]
-    except Exception as err:  # noqa: BLE001
+    except Exception as err:
         typer.echo(f"Error reading notebook: {err}")
         raise typer.Exit(code=12) from err
     content: str
