@@ -12,7 +12,7 @@ repository = "https://github.com/tsvikas/nbcat"
 nbcat = "nbcat.__main__:app"
 
 [tool.poetry.dependencies]
-python = "~3.12"
+python = ">=3.9,<4"
 pygments = "^2.17.2"
 typer = "^0.12.2"
 nbconvert = "^7.16.3"
@@ -57,12 +57,12 @@ strict = true
 
 
 [tool.black]
-target-version = ["py312"]
+target-version = ["py39"]
 preview = false
 
 
 [tool.ruff]
-target-version = "py312"
+target-version = "py39"
 
 [tool.ruff.lint]
 select = ["ALL"]
