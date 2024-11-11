@@ -18,7 +18,7 @@ typer = "^0.13"
 nbconvert = "^7.16.3"
 
 [tool.poetry.group.dev.dependencies]
-black = "^24"
+black = {extras = ["jupyter"], version = "^24"}
 dunamai = "^1"
 ruff = "^0.7"
 pre-commit = "^4"
