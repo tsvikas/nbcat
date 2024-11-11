@@ -2,7 +2,7 @@
 
 import re
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Optional
 
 import nbconvert
 import nbformat
@@ -10,6 +10,8 @@ import pygments
 import typer
 from pygments import lexers
 from pygments.formatters import terminal
+
+from . import __version__
 
 SUPPORTED_FORMATS = {
     # each entry is a tuple of the exporter class and the lexer name
@@ -23,6 +25,12 @@ SUPPORTED_FORMATS = {
 }
 
 app = typer.Typer()
+
+
+def version_callback(value: bool) -> None:  # noqa: FBT001, D103
+    if value:
+        print(f"nbcat {__version__}")  # noqa: T201
+        raise typer.Exit()  # noqa: RSE102
 
 
 @app.command()
@@ -55,6 +63,10 @@ def main(
             help="Force syntax highlighting even when the output is not a terminal",
         ),
     ] = False,
+    version: Annotated[  # noqa: ARG001
+        Optional[bool],  # noqa: FA100
+        typer.Option("--version", callback=version_callback, is_eager=True),
+    ] = None,
 ) -> None:
     """Display a notebook with syntax highlighting in the terminal."""
     # set the exporter and laxer name based on the format
