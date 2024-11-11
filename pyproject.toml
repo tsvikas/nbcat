@@ -111,6 +111,7 @@ allow-dict-calls-with-keyword-arguments = true
   "S101",     # flake8-bandit/assert
   "D1",       # pydocstyle/undocumented-*
 ]
+"tests/**.ipynb" = ["D", "ANN", "T201", "PLR2004"]
 
 
 [tool.poe.tasks]
