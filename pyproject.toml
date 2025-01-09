@@ -1,6 +1,6 @@
 [project]
 name = "nbcat"
-version = "0.1.2+dev"
+version = "0.2.0"
 description = "display jupyter notebooks in the terminal"
 authors = [{name="Tsvika S", email= "tsvikas@gmail.com"}]
 license.text = "AGPL-3.0-or-later"
