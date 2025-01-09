@@ -1,49 +1,44 @@
-[tool.poetry]
+[project]
 name = "nbcat"
-version = "0.0.0"  # managed with poetry-dynamic-versioning
+version = "0.1.2+dev"
 description = ""
-authors = ["Tsvika S <tsvikas@gmail.com>"]
-# optional settings:
-license = "AGPL-3.0-or-later"
+authors = [{name="Tsvika S", email= "tsvikas@gmail.com"}]
+license.text = "AGPL-3.0-or-later"
 readme = "README.md"
-repository = "https://github.com/tsvikas/nbcat"
+urls.repository = "https://github.com/tsvikas/nbcat"
+requires-python = ">= 3.9"
 
-[tool.poetry.scripts]
+dependencies= [
+  "pygments >= 2.17",
+  "typer >= 0.15",
+  "nbconvert >= 7.16",
+]
+
+[project.scripts]
 nbcat = "nbcat.__main__:app"
 
-[tool.poetry.dependencies]
-python = ">=3.9,<4"
-pygments = "^2.17.2"
-typer = "^0.15"
-nbconvert = "^7.16.3"
-
-[tool.poetry.group.dev.dependencies]
-black = {extras = ["jupyter"], version = "^24"}
-dunamai = "^1"
-ruff = "^0.8"
-pre-commit = "^4"
-
-[tool.poetry.group.typing.dependencies]
-mypy = "^1"
-types-Pygments = "^2.17"
-
-[tool.poetry.group.testing.dependencies]
-pytest = "^8"
-pytest-clarity = "^1"
-pytest-cov = "^6"
-pytest-pretty = "^1"
-pytest-reverse = "^1"
-pytest-datadir = "^1.5.0"
-
-
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
+[dependency-groups]
+dev = [
+  # dev
+  "black[jupyter] >= 24",
+  "ruff >= 0.8",
+  "pre-commit >= 4",
+  # typing
+  "mypy >= 1",
+  "types-Pygments >= 2.17",
+  # tests
+  "pytest >= 8",
+  "pytest-clarity >= 1",
+  "pytest-cov >= 6",
+  "pytest-pretty >= 1",
+  "pytest-reverse >= 1",
+  "pytest-datadir >= 1.5.0",
+]
 
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 
 [tool.pytest.ini_options]
@@ -118,7 +113,6 @@ allow-dict-calls-with-keyword-arguments = true
 check        = ["format", "lint", "test"]
 test         = "pytest"
 lint-mypy    = "mypy"
-version      = "dunamai from git"
 
 [tool.poe.tasks.format]
 sequence = ["format-isort $target", "format-black $target"]
