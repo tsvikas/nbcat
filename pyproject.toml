@@ -1,7 +1,7 @@
 [project]
 name = "nbcat"
 version = "0.1.2+dev"
-description = ""
+description = "display jupyter notebooks in the terminal"
 authors = [{name="Tsvika S", email= "tsvikas@gmail.com"}]
 license.text = "AGPL-3.0-or-later"
 readme = "README.md"
@@ -42,7 +42,7 @@ build-backend = "hatchling.build"
 
 
 [tool.pytest.ini_options]
-addopts = "--doctest-modules --cov=nbcat"
+addopts = ["--doctest-modules", "--cov=nbcat"]
 
 
 [tool.mypy]
@@ -77,17 +77,6 @@ ignore = [
   # annoying:
   "RET504",   # flake8-return/unnecessary-assign
   "ANN1",     # flake8-annotations/missing-type-self,missing-type-cls
-  # ban something useful for a good reason
-  #"C901",     # mccabe/complex-structure
-  #"S101",     # flake8-bandit/assert
-  #"FBT001",   # flake8-boolean-trap/boolean-type-hint-positional-argument
-  #"FBT002",   # flake8-boolean-trap/boolean-default-value-positional-argument
-  #"DTZ",      # flake8-datetimez
-  #"PD901",    # pandas-vet/pandas-df-variable-name
-  #"FIX",      # flake8-fixme
-  #"ERA001",   # eradicate/commented-out-code
-  #"PLR091",   # PyLint-Refactor/too-many-*
-  #"TRY003",   # tryceratops/raise-vanilla-args
 ]
 
 [tool.ruff.lint.flake8-annotations]
