@@ -1,10 +1,10 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v0.7.1-5-g43ce126
-_src_path: .
+_commit: v0.8.0
+_src_path: ~/code/python-template
 email: tsvikas@gmail.com
 format_tool: black
 full_name: Tsvika Shapira
-get_package_version_from_vcs: true
+get_package_version_from_vcs: false
 has_cli: true
 jupyter_files: forbid
 license: MIT
