@@ -68,6 +68,7 @@ repos:
         entry: filenames must not end in .ipynb
         language: fail
         files: '\.ipynb$'
+        exclude: tests/test_app/notebook.ipynb
 
   # general formatting
   - repo: https://github.com/Lucas-C/pre-commit-hooks
