@@ -115,13 +115,14 @@ repos:
         files: '(\.pyi?|^uv.lock$)'
         pass_filenames: false
 
-  # validate schema
-  - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.23
-    hooks:
-      - id: validate-pyproject
-        additional_dependencies:
-          - validate-pyproject-schema-store[all]
+  ## validate schema
+  # disabled - not working with tool.ruff.lint?
+  # - repo: https://github.com/abravalheri/validate-pyproject
+  #   rev: v0.23
+  #   hooks:
+  #     - id: validate-pyproject
+  #       additional_dependencies:
+  #         - validate-pyproject-schema-store[all]
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.31.0
     hooks:
