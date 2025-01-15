@@ -15,7 +15,7 @@ dependencies= [
 ]
 
 [project.scripts]
-nbcat = "nbcat.__main__:app"
+nbcat = "nbcat.cli:app"
 
 [dependency-groups]
 dev = [

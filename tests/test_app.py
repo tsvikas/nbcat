@@ -2,7 +2,7 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
-from nbcat.__main__ import SUPPORTED_FORMATS, app
+from nbcat.cli import SUPPORTED_FORMATS, app
 
 runner = CliRunner()
 
