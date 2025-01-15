@@ -26,13 +26,13 @@ repos:
         args: ["--pytest-test-first"]
       # filetypes
       - id: check-json
-        exclude: ipynb
+        exclude_types: [jupyter]
       - id: check-symlinks
       - id: check-toml
       - id: check-yaml
       - id: check-xml
       - id: pretty-format-json
-        exclude: ipynb
+        exclude_types: [jupyter]
   - repo: https://github.com/pre-commit/pygrep-hooks
     rev: v1.10.0
     hooks:
@@ -67,7 +67,7 @@ repos:
         name: forbid ipynb
         entry: filenames must not end in .ipynb
         language: fail
-        files: '\.ipynb$'
+        types: [jupyter]
         exclude: tests/test_app/notebook.ipynb
 
   # general formatting
@@ -79,13 +79,14 @@ repos:
     rev: 3.0.3
     hooks:
       - id: editorconfig-checker
-        exclude: ipynb
+        exclude_types: [jupyter]
   - repo: https://github.com/rbubley/mirrors-prettier
     rev: v3.4.2
     hooks:
       - id: prettier
         types_or: [yaml, markdown, html, css, scss, javascript, json]
         args: ["--prose-wrap=always"]
+        exclude_types: [jupyter]
 
   # python formatting and linting
   - repo: https://github.com/psf/black-pre-commit-mirror
