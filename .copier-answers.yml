@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v0.7.1-5-g43ce126
+_src_path: .
+email: tsvikas@gmail.com
+format_tool: black
+full_name: Tsvika Shapira
+get_package_version_from_vcs: true
+has_cli: true
+jupyter_files: forbid
+license: MIT
+package_description: display jupyter notebooks in the terminal.
+package_name: nbcat
+project_name: nbcat
+python_minor: 9
+username: tsvikas
+year: 2025
