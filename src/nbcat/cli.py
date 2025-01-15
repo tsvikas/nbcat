@@ -29,7 +29,7 @@ app = typer.Typer()
 
 def version_callback(value: bool) -> None:  # noqa: FBT001, D103
     if value:
-        print(f"nbcat {__version__}")  # noqa: T201
+        print(f"nbcat {__version__}")
         raise typer.Exit()  # noqa: RSE102
 
 
