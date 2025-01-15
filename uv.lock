@@ -347,7 +347,7 @@ name = "importlib-metadata"
 version = "8.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "zipp" },
+    { name = "zipp", marker = "python_full_version < '3.10'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/cd/12/33e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1b/importlib_metadata-8.5.0.tar.gz", hash = "sha256:71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7", size = 55304 }
 wheels = [
@@ -704,17 +704,17 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "black", extras = ["jupyter"], specifier = ">=24" },
-    { name = "mypy", specifier = ">=1" },
-    { name = "pre-commit", specifier = ">=4" },
-    { name = "pytest", specifier = ">=8" },
-    { name = "pytest-clarity", specifier = ">=1" },
-    { name = "pytest-cov", specifier = ">=6" },
-    { name = "pytest-datadir", specifier = ">=1.5.0" },
-    { name = "pytest-pretty", specifier = ">=1" },
-    { name = "pytest-reverse", specifier = ">=1" },
-    { name = "ruff", specifier = ">=0.8" },
-    { name = "types-pygments", specifier = ">=2.17" },
+    { name = "black", extras = ["jupyter"], specifier = "~=24.0" },
+    { name = "mypy", specifier = "~=1.0" },
+    { name = "pre-commit", specifier = "~=4.0" },
+    { name = "pytest", specifier = "~=8.0" },
+    { name = "pytest-clarity", specifier = "~=1.0" },
+    { name = "pytest-cov", specifier = "~=6.0" },
+    { name = "pytest-datadir", specifier = "~=1.5" },
+    { name = "pytest-pretty", specifier = "~=1.0" },
+    { name = "pytest-reverse", specifier = "~=1.0" },
+    { name = "ruff", specifier = "~=0.9.0" },
+    { name = "types-pygments", specifier = "~=2.17" },
 ]
 
 [[package]]

@@ -50,19 +50,19 @@ nbcat = "nbcat.cli:app"
 [dependency-groups]
 dev = [
   # dev
-  "black[jupyter] >= 24",
-  "ruff >= 0.8",
-  "pre-commit >= 4",
+  "black[jupyter] ~= 24.0",
+  "ruff ~= 0.9.0",
+  "pre-commit ~= 4.0",
   # typing
-  "mypy >= 1",
-  "types-Pygments >= 2.17",
+  "mypy ~= 1.0",
+  "types-Pygments ~= 2.17",
   # tests
-  "pytest >= 8",
-  "pytest-clarity >= 1",
-  "pytest-cov >= 6",
-  "pytest-pretty >= 1",
-  "pytest-reverse >= 1",
-  "pytest-datadir >= 1.5.0",
+  "pytest ~= 8.0",
+  "pytest-clarity ~= 1.0",
+  "pytest-cov ~= 6.0",
+  "pytest-pretty ~= 1.0",
+  "pytest-reverse ~= 1.0",
+  "pytest-datadir ~= 1.5",
 ]
 
 
