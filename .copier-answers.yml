@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v0.8.0
+_commit: v0.8.0-15-g4503297
 _src_path: ~/code/python-template
 email: tsvikas@gmail.com
 format_tool: black

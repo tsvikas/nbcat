@@ -1,7 +1,7 @@
 # nbcat
 
 <!-- prettier-ignore-start -->
-[![Tests][test-badge]][test-link]
+[![Tests][tests-badge]][tests-link]
 [![Documentation Status][rtd-badge]][rtd-link]
 
 [![PyPI version][pypi-version]][pypi-link]
@@ -11,8 +11,8 @@
 [![GitHub Discussion][github-discussions-badge]][github-discussions-link]
 
 
-[test-badge]:               https://github.com/tsvikas/nbcat/actions/workflows/test.yml/badge.svg
-[test-link]:                https://github.com/tsvikas/nbcat/actions/workflows/test.yml
+[tests-badge]:              https://github.com/tsvikas/nbcat/actions/workflows/tests.yml/badge.svg
+[tests-link]:               https://github.com/tsvikas/nbcat/actions/workflows/tests.yml
 [conda-badge]:              https://img.shields.io/conda/vn/conda-forge/nbcat
 [conda-link]:               https://github.com/conda-forge/nbcat-feedstock
 [github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github

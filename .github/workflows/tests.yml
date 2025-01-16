@@ -1,0 +1,49 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        resolution:
+          - "no-upgrade"
+          - "highest"
+          - "lowest"
+        python-version:
+          - "3.9"
+          - "3.10"
+          - "3.11"
+          - "3.12"
+          - "3.13"
+        allow-failure: [false]
+        include:
+          # map resolution to resolution-args
+          - resolution: "no-upgrade"
+            resolution-args: "--no-upgrade"
+          - resolution: "highest"
+            resolution-args: "--upgrade --resolution highest"
+          - resolution: "lowest"
+            resolution-args: "--upgrade --resolution lowest-direct"
+          # add pre-release
+          - resolution: "prerelease"
+            resolution-args: "--upgrade --resolution highest --prerelease allow"
+            python-version: "3.13"
+            allow-failure: true
+          - resolution: "prerelease"
+            resolution-args: "--upgrade --resolution highest --prerelease allow"
+            python-version: "3.14"
+            allow-failure: true
+    continue-on-error: ${{ matrix.allow-failure }}
+    name: test-py${{ matrix.python-version }}-${{ matrix.resolution }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python-version }}
+      - name: Install the project
+        run: uv sync --all-extras --group dev ${{ matrix.resolution-args }}
+      - name: Run tests
+        run: uv run pytest
