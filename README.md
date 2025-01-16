@@ -1,5 +1,6 @@
 # nbcat
 
+<!-- prettier-ignore-start -->
 [![Tests][test-badge]][test-link]
 [![Documentation Status][rtd-badge]][rtd-link]
 
@@ -9,9 +10,7 @@
 
 [![GitHub Discussion][github-discussions-badge]][github-discussions-link]
 
-<!-- SPHINX-START -->
 
-<!-- prettier-ignore-start -->
 [test-badge]:               https://github.com/tsvikas/nbcat/actions/workflows/test.yml/badge.svg
 [test-link]:                https://github.com/tsvikas/nbcat/actions/workflows/test.yml
 [conda-badge]:              https://img.shields.io/conda/vn/conda-forge/nbcat
@@ -25,6 +24,7 @@
 [rtd-link]:                 https://nbcat.readthedocs.io/en/latest/?badge=latest
 
 <!-- prettier-ignore-end -->
+<!-- SPHINX-START -->
 
 display your notebooks, in the terminal ![Demo](assets/DEMO.gif)
 
