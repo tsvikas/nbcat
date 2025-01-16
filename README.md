@@ -12,12 +12,12 @@
 <!-- SPHINX-START -->
 
 <!-- prettier-ignore-start -->
-[actions-badge]:            https://github.com/tsvikas/nbcat"/workflows/CI/badge.svg
-[actions-link]:             https://github.com/tsvikas/nbcat"/actions
+[actions-badge]:            https://github.com/tsvikas/nbcat/workflows/CI/badge.svg
+[actions-link]:             https://github.com/tsvikas/nbcat/actions
 [conda-badge]:              https://img.shields.io/conda/vn/conda-forge/nbcat
 [conda-link]:               https://github.com/conda-forge/nbcat-feedstock
 [github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
-[github-discussions-link]:  https://github.com/tsvikas/nbcat"/discussions
+[github-discussions-link]:  https://github.com/tsvikas/nbcat/discussions
 [pypi-link]:                https://pypi.org/project/nbcat/
 [pypi-platforms]:           https://img.shields.io/pypi/pyversions/nbcat
 [pypi-version]:             https://img.shields.io/pypi/v/nbcat
