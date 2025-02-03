@@ -7,24 +7,24 @@ repos:
       - id: check-case-conflict
       - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
-      # git
+        # git
       - id: check-added-large-files
       - id: check-merge-conflict
-      # secrets
+        # secrets
       - id: detect-private-key
-      # text in files
+        # text in files
       - id: end-of-file-fixer
       - id: mixed-line-ending
         args: ["--fix=lf"]
       - id: trailing-whitespace
-      # python
+        # python
       - id: check-ast
       - id: check-docstring-first
       - id: debug-statements
       - id: requirements-txt-fixer
       - id: name-tests-test
         args: ["--pytest-test-first"]
-      # filetypes
+        # filetypes
       - id: check-json
         exclude_types: [jupyter]
       - id: check-symlinks
@@ -43,14 +43,14 @@ repos:
       - id: python-no-eval
       - id: python-no-log-warn
       - id: python-use-type-annotations
-      # rst
+        # rst
       - id: rst-backticks
       - id: rst-directive-colons
       - id: rst-inline-touching-normal
-      # text
+        # text
       - id: text-unicode-replacement-char
 
-  # environment manager
+    # environment manager
   - repo: https://github.com/mxr/sync-pre-commit-deps
     rev: v0.0.3
     hooks:
@@ -60,7 +60,7 @@ repos:
     hooks:
       - id: uv-lock
 
-  # jupyter notebooks
+    # jupyter notebooks
   - repo: local
     hooks:
       - id: forbid-ipynb
@@ -70,7 +70,7 @@ repos:
         types: [jupyter]
         exclude: tests/test_app/notebook.ipynb
 
-  # general formatting
+    # general formatting
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.5.5
     hooks:
@@ -88,7 +88,7 @@ repos:
         args: ["--prose-wrap=always"]
         exclude_types: [jupyter]
 
-  # python formatting and linting
+    # python formatting and linting
   - repo: https://github.com/psf/black-pre-commit-mirror
     rev: 25.1.0
     hooks:
@@ -98,7 +98,7 @@ repos:
     hooks:
       - id: blacken-docs
         additional_dependencies:
-          - black==24.10.0
+          - black==25.1.0
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.9.4
     hooks:
@@ -116,7 +116,7 @@ repos:
         files: '(\.pyi?|^uv.lock$)'
         pass_filenames: false
 
-  # validate schema
+    # validate schema
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.23
     hooks:
@@ -130,13 +130,13 @@ repos:
       - id: check-github-workflows
       - id: check-readthedocs
 
-  # shell scripts
+    # shell scripts
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
 
-  # spell checks
+    # spell checks
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
