@@ -52,11 +52,11 @@ repos:
 
   # environment manager
   - repo: https://github.com/mxr/sync-pre-commit-deps
-    rev: v0.0.2
+    rev: v0.0.3
     hooks:
       - id: sync-pre-commit-deps
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.5.20
+    rev: 0.5.26
     hooks:
       - id: uv-lock
 
@@ -76,7 +76,7 @@ repos:
     hooks:
       - id: forbid-tabs
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 3.0.3
+    rev: 3.2.0
     hooks:
       - id: editorconfig-checker
         exclude_types: [jupyter]
@@ -90,7 +90,7 @@ repos:
 
   # python formatting and linting
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.10.0
+    rev: 25.1.0
     hooks:
       - id: black
   - repo: https://github.com/adamchainz/blacken-docs
@@ -100,7 +100,7 @@ repos:
         additional_dependencies:
           - black==24.10.0
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.1
+    rev: v0.9.4
     hooks:
       - id: ruff
         alias: ruff-isort
@@ -124,7 +124,7 @@ repos:
         additional_dependencies:
           - validate-pyproject-schema-store[all]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.31.0
+    rev: 0.31.1
     hooks:
       - id: check-dependabot
       - id: check-github-workflows
@@ -138,7 +138,7 @@ repos:
 
   # spell checks
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.3.0
+    rev: v2.4.1
     hooks:
       - id: codespell
   - repo: local
