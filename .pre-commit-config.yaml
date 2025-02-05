@@ -88,6 +88,12 @@ repos:
         args: ["--prose-wrap=always"]
         exclude_types: [jupyter]
 
+  # rst formatting
+  - repo: https://github.com/PyCQA/doc8
+    rev: v1.1.2
+    hooks:
+      - id: doc8
+
   # python formatting and linting
   - repo: https://github.com/psf/black-pre-commit-mirror
     rev: 25.1.0
@@ -115,6 +121,11 @@ repos:
         language: system
         files: '(\.pyi?|^uv.lock$)'
         pass_filenames: false
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.15.0
+    hooks:
+      - id: mypy
+        args: ["--config-file", "", "--ignore-missing-imports"]
 
   # validate schema
   - repo: https://github.com/abravalheri/validate-pyproject
@@ -127,8 +138,14 @@ repos:
     rev: 0.31.1
     hooks:
       - id: check-dependabot
+      - id: check-github-actions
       - id: check-github-workflows
+      - id: check-gitlab-ci
       - id: check-readthedocs
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.7
+    hooks:
+      - id: actionlint
 
   # shell scripts
   - repo: https://github.com/shellcheck-py/shellcheck-py
@@ -137,6 +154,10 @@ repos:
       - id: shellcheck
 
   # spell checks
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.29.5
+    hooks:
+      - id: typos
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
