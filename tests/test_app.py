@@ -2,6 +2,7 @@ from pathlib import Path
 
 from typer.testing import CliRunner
 
+from nbcat import __version__
 from nbcat.cli import SUPPORTED_FORMATS, app
 
 runner = CliRunner()
@@ -15,6 +16,12 @@ def test_app(datadir: Path) -> None:
         )
         assert result.exit_code == 0
         assert "success = partial" in result.stdout
+
+
+def test_app_version() -> None:
+    result = runner.invoke(app, ["--version"])
+    assert result.exit_code == 0
+    assert __version__ in result.stdout
 
 
 def test_app_errors(datadir: Path) -> None:
