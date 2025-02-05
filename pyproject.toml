@@ -4,15 +4,16 @@ build-backend = "hatchling.build"
 
 
 [project]
-name = "nbcat"
 dynamic = ["version"]
-description = "display jupyter notebooks in the terminal"
+name = "nbcat"
+description = "display jupyter notebooks in the terminal."
 license = "MIT"
 license-files = ["LICEN[CS]E.*"]
 readme = "README.md"
-urls.repository = "https://github.com/tsvikas/nbcat"
-requires-python = ">= 3.9"
-authors = [{name="Tsvika Shapira", email= "tsvikas@gmail.com"}]
+requires-python = ">=3.9"
+authors = [
+  {name = "Tsvika Shapira", email = "tsvikas@gmail.com"}
+]
 keywords = []
 classifiers = [
   # TODO: remove when ready to upload to pypi
@@ -37,15 +38,29 @@ classifiers = [
   "Programming Language :: Python :: 3.14",
   "Typing :: Typed",
 ]
-
-dependencies= [
+dependencies = [
   "pygments >= 2.17",
   "typer >= 0.15",
   "nbconvert >= 7.16",
 ]
 
+[project.optional-dependencies]
+# optional_name = ["some_package >=1.0"]
+
+[project.urls]
+# homepage = "https://nbcat.readthedocs.io"
+source = "https://github.com/tsvikas/nbcat"
+# changelog = "https://github.com/tsvikas/nbcat/blob/master/CHANGELOG.md"
+# releasenotes = "https://github.com/tsvikas/nbcat/releases"
+# documentation = "https://nbcat.readthedocs.io"
+# issues = "https://github.com/tsvikas/nbcat/issues"
+# funding = "https://github.com/sponsors/tsvikas"
+
 [project.scripts]
 nbcat = "nbcat.cli:app"
+
+[project.gui-scripts]
+# nbcat = "nbcat.gui:app.run"
 
 
 [tool.uv]
