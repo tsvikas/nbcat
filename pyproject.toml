@@ -110,8 +110,10 @@ addopts = [
   "--strict-markers",
   "--strict-config",
   ## addons
+  "--benchmark-disable",  # pytest-benchmark
   "--cov=src/nbcat",  # pytest-cov
   "--reverse",  # pytest-reverse
+  "--numprocesses=auto",  # pytest-xdist
   ## reporting
   "-ra",
   "--showlocals",
@@ -120,7 +122,7 @@ xfail_strict = true
 # CHECK those options:
 filterwarnings = [
   "error",
-  "ignore::DeprecationWarning",
+  "default::DeprecationWarning",
   "error::DeprecationWarning:nbcat",
 ]
 log_cli_level = "INFO"
