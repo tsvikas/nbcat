@@ -319,6 +319,18 @@ wheels = [
 ]
 
 [[package]]
+name = "dunamai"
+version = "1.23.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "packaging" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/06/4e/a5c8c337a1d9ac0384298ade02d322741fb5998041a5ea74d1cd2a4a1d47/dunamai-1.23.0.tar.gz", hash = "sha256:a163746de7ea5acb6dacdab3a6ad621ebc612ed1e528aaa8beedb8887fccd2c4", size = 44681 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/21/4c/963169386309fec4f96fd61210ac0a0666887d0fb0a50205395674d20b71/dunamai-1.23.0-py3-none-any.whl", hash = "sha256:a0906d876e92441793c6a423e16a4802752e723e9c9a5aabdc5535df02dbe041", size = 26342 },
+]
+
+[[package]]
 name = "editorconfig-checker"
 version = "3.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -720,6 +732,7 @@ dev = [
     { name = "black", extra = ["jupyter"] },
     { name = "blacken-docs" },
     { name = "codespell" },
+    { name = "dunamai" },
     { name = "editorconfig-checker" },
     { name = "pre-commit" },
     { name = "ruff" },
@@ -754,6 +767,7 @@ dev = [
     { name = "black", extras = ["jupyter"], specifier = "~=25.0" },
     { name = "blacken-docs", specifier = "~=1.0" },
     { name = "codespell", specifier = "~=2.0" },
+    { name = "dunamai", specifier = "~=1.0" },
     { name = "editorconfig-checker", specifier = "~=3.0" },
     { name = "pre-commit", specifier = "~=4.0" },
     { name = "ruff", specifier = "~=0.9.0" },

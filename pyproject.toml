@@ -78,6 +78,7 @@ dev = [
   "validate-pyproject[all,store] ~=0.23.0",
   "shellcheck-py ~=0.10.0",
   "codespell ~=2.0",
+  "dunamai ~=1.0",
 ]
 test = [
   "pytest ~=8.0",

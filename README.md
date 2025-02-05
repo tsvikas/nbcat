@@ -56,7 +56,8 @@ use `-f FORMAT` to specify the output format, default is `markdown`
 ## Code formatting
 
 - use `uv run black .` to format code
-- use `git ls-files -z -- '*.md' '*.rst' '*.tex' '*.py' | xargs -0 blacken-docs`
+- use
+  `git ls-files -z -- '*.md' '*.rst' '*.tex' '*.py' | xargs -0 uv run blacken-docs`
   to format docs
 
 ## Code quality
