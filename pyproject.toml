@@ -224,39 +224,6 @@ flake8-comprehensions.allow-dict-calls-with-keyword-arguments = true
 "tests/**.ipynb" = ["D", "ANN", "T201", "PLR2004"]
 
 
-[tool.poe.tasks]
-check        = ["format", "lint", "test"]
-test         = "pytest"
-lint-mypy    = "mypy"
-
-[tool.poe.tasks.format]
-sequence = ["format-isort $target", "format-black $target"]
-args = [{name="target", positional=true, default=".", multiple=true}]
-
-[tool.poe.tasks.format-isort]
-cmd = "ruff check --select I001 --fix $target"
-args = [{name="target", positional=true, default=".", multiple=true}]
-
-[tool.poe.tasks.format-black]
-cmd = "black $target"
-args = [{name="target", positional=true, default=".", multiple=true}]
-
-[tool.poe.tasks.lint]
-sequence = ["lint-ruff $target", "lint-mypy"]
-args = [{name="target", positional=true, default=".", multiple=true}]
-
-[tool.poe.tasks.lint-ruff]
-cmd = "ruff check $target"
-args = [{name="target", positional=true, default=".", multiple=true}]
-
-[tool.poe.tasks._tag]
-cmd = "git tag -a $tagname -m \"version $tagname\" -e"
-args = [{name="tagname", positional=true, required=true}]
-
-[tool.poe.tasks.tag]
-sequence = ["check", "_tag $tagname"]
-args = [{name="tagname", positional=true, required=true}]
-
 [tool.pylint]
 py-version = "3.9"
 # CHECK those options:
