@@ -46,14 +46,15 @@ venv/
 .mypy_cache/
 .ruff_cache/
 .hypothesis/
+.benchmarks/
 
 # PyCharm
-.idea
+.idea/
 
 # jupyter
 .ipynb_checkpoints/
 
-# converted notebooks:
+# TODO
+TODO*
 
 # specific to this project:
-TODO.md
