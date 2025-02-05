@@ -26,7 +26,7 @@ jobs:
             resolution-args: "--upgrade --resolution highest"
           - resolution: "lowest"
             resolution-args: "--upgrade --resolution lowest-direct"
-          # add pre-release
+          # add prerelease versions
           - resolution: "prerelease"
             resolution-args: "--upgrade --resolution highest --prerelease allow"
             python-version: "3.13"
@@ -44,6 +44,6 @@ jobs:
           enable-cache: true
           python-version: ${{ matrix.python-version }}
       - name: Install the project
-        run: uv sync --all-extras --group dev ${{ matrix.resolution-args }}
+        run: uv sync --all-extras --group test ${{ matrix.resolution-args }}
       - name: Run tests
         run: uv run pytest

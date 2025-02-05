@@ -47,22 +47,39 @@ dependencies= [
 [project.scripts]
 nbcat = "nbcat.cli:app"
 
+
+[tool.uv]
+default-groups = ["dev", "test", "typing"]
+
+
 [dependency-groups]
 dev = [
-  # dev
-  "black[jupyter] ~= 24.0",
-  "ruff ~= 0.9.0",
-  "pre-commit ~= 4.0",
-  # typing
-  "mypy ~= 1.0",
-  "types-Pygments ~= 2.17",
-  # tests
-  "pytest ~= 8.0",
-  "pytest-clarity ~= 1.0",
-  "pytest-cov ~= 6.0",
-  "pytest-pretty ~= 1.0",
-  "pytest-reverse ~= 1.0",
-  "pytest-datadir ~= 1.5",
+  "rust-just ~=1.0",
+  "pre-commit ~=4.0",
+  "editorconfig-checker ~=3.0",
+  "black[jupyter] ~=25.0",
+  "blacken-docs ~=1.0",
+  "ruff ~=0.9.0",
+  "validate-pyproject[all,store] ~=0.23.0",
+  "shellcheck-py ~=0.10.0",
+  "codespell ~=2.0",
+]
+test = [
+  "pytest ~=8.0",
+  ## addons
+  "pytest-benchmark ~=5.0",
+  "pytest-cov ~=6.0",
+  "pytest-reverse ~=1.0",
+  "pytest-xdist[psutil] ~=3.0",
+  ## reporting
+  "pytest-clarity ~=1.0",
+  "pytest-pretty ~=1.0",
+  ## fixtures
+  "pytest-datadir ~=1.0",
+]
+typing = [
+  "mypy ~=1.14",
+  "types-Pygments >=0",
 ]
 
 
