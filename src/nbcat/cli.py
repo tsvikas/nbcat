@@ -27,10 +27,10 @@ SUPPORTED_FORMATS = {
 app = typer.Typer()
 
 
-def version_callback(value: bool) -> None:  # noqa: FBT001, D103
+def _version_callback(value: bool) -> None:  # noqa: FBT001
     if value:
         print(f"nbcat {__version__}")
-        raise typer.Exit()  # noqa: RSE102
+        raise typer.Exit(0)
 
 
 @app.command()
@@ -65,7 +65,13 @@ def main(
     ] = False,
     version: Annotated[  # noqa: ARG001
         Optional[bool],  # noqa: FA100
-        typer.Option("--version", callback=version_callback, is_eager=True),
+        typer.Option(
+            "--version",
+            "-V",
+            callback=_version_callback,
+            is_eager=True,
+            help="Print version",
+        ),
     ] = None,
 ) -> None:
     """Display a notebook with syntax highlighting in the terminal."""
