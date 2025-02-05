@@ -1,4 +1,4 @@
-"""Display a Jupyter notebook with syntax highlighting in the terminal."""
+"""CLI for nbcat."""
 
 import re
 from pathlib import Path

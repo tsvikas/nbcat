@@ -1,4 +1,7 @@
-"""Display a Jupyter notebook with syntax highlighting in the terminal."""
+"""nbcat: display jupyter notebooks in the terminal.
+
+use `python -m nbcat` to run the cli
+"""
 
 from .cli import app
 

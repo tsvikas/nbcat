@@ -1,4 +1,4 @@
-"""Display jupyter notebooks in the terminal with syntax highlighting.
+"""nbcat: display jupyter notebooks in the terminal.
 
 Copyright (c) 2025 Tsvika Shapira. All rights reserved.
 """
