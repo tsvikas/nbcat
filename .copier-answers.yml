@@ -4,7 +4,7 @@ _src_path: gh:tsvikas/python-template
 email: tsvikas@gmail.com
 format_tool: black
 full_name: Tsvika Shapira
-get_package_version_from_vcs: false
+get_package_version_from_vcs: true
 has_cli: true
 jupyter_files: forbid
 license: MIT

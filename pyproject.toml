@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 
@@ -100,7 +100,8 @@ typing = [
 
 
 [tool.hatch]
-version.path = "src/nbcat/__init__.py"
+version.source = "vcs"
+build.hooks.vcs.version-file = "src/nbcat/_version.py"
 
 
 [tool.pytest.ini_options]
@@ -132,6 +133,7 @@ log_cli_level = "INFO"
 [tool.coverage]
 run.omit = [
   "src/nbcat/__main__.py",
+  "src/nbcat/_version.py",
 ]
 
 
@@ -214,6 +216,9 @@ flake8-comprehensions.allow-dict-calls-with-keyword-arguments = true
 "src/nbcat/cli.py" = [
   "T20",      # flake8-print
 ]
+"src/nbcat/_version.py" = [
+  "ALL",
+]
 "!tests/test_*.py" = [
   "PT",       # flake8-pytest-style
 ]
@@ -228,6 +233,7 @@ flake8-comprehensions.allow-dict-calls-with-keyword-arguments = true
 
 [tool.pylint]
 py-version = "3.9"
+ignore-paths = [".*/_version.py"]
 # CHECK those options:
 reports.output-format = "colorized"
 similarities.ignore-imports = "yes"
