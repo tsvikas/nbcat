@@ -56,7 +56,7 @@ repos:
     hooks:
       - id: sync-pre-commit-deps
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.5.28
+    rev: 0.6.3
     hooks:
       - id: uv-lock
 
@@ -81,7 +81,7 @@ repos:
       - id: editorconfig-checker
         exclude_types: [jupyter]
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.4.2
+    rev: v3.5.3
     hooks:
       - id: prettier
         types_or: [yaml, markdown, html, css, scss, javascript, json]
@@ -106,7 +106,7 @@ repos:
         additional_dependencies:
           - black==25.1.0
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.4
+    rev: v0.9.9
     hooks:
       - id: ruff
         alias: ruff-isort
@@ -135,7 +135,7 @@ repos:
         additional_dependencies:
           - validate-pyproject-schema-store[all]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.31.1
+    rev: 0.31.2
     hooks:
       - id: check-dependabot
       - id: check-github-actions
@@ -155,7 +155,7 @@ repos:
 
   # spell checks
   - repo: https://github.com/crate-ci/typos
-    rev: v1.29.5
+    rev: v1.30.0
     hooks:
       - id: typos
   - repo: https://github.com/codespell-project/codespell
