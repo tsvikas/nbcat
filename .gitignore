@@ -50,13 +50,16 @@ venv/
 .hypothesis/
 .benchmarks/
 
-# PyCharm
-.idea/
+# Secrets
+.env
 
 # jupyter
 .ipynb_checkpoints/
 
 # TODO
 TODO*
+
+# LLMs
+CLAUDE.md
 
 # specific to this project:
