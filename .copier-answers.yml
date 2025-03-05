@@ -1,16 +1,16 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v0.11.2
+_commit: v0.13.1-14-gfbd67ae
 _src_path: gh:tsvikas/python-template
-email: tsvikas@gmail.com
 format_tool: black
-full_name: Tsvika Shapira
 get_package_version_from_vcs: true
+github_user: tsvikas
 has_cli: true
 jupyter_files: forbid
 license: MIT
 package_description: display jupyter notebooks in the terminal.
 package_name: nbcat
 project_name: nbcat
-python_minor: 9
-username: tsvikas
+python_min: 9
+user_email: tsvikas@gmail.com
+user_name: Tsvika Shapira
 year: 2025

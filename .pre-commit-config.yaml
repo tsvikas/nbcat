@@ -1,4 +1,20 @@
+exclude: ^.copier-answers.yml$
+
 repos:
+  # Python / pre-commit package versions
+  # pyproject.toml -> uv.lock
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.6.4
+    hooks:
+      - id: uv-lock
+  # uv.lock -> .pre-commit-config.yaml
+  # .pre-commit-config.yaml -> .pre-commit-config.yaml
+  - repo: https://github.com/pre-commit/sync-pre-commit-deps
+    rev: v0.0.3
+    hooks:
+      - id: sync-pre-commit-deps
+
+  # General hooks
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
@@ -50,51 +66,48 @@ repos:
       # text
       - id: text-unicode-replacement-char
 
-  # environment manager
-  - repo: https://github.com/pre-commit/sync-pre-commit-deps
-    rev: v0.0.3
-    hooks:
-      - id: sync-pre-commit-deps
-  - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.6.3
-    hooks:
-      - id: uv-lock
-
-  # jupyter notebooks
-  - repo: local
-    hooks:
-      - id: forbid-ipynb
-        name: forbid ipynb
-        entry: filenames must not end in .ipynb
-        language: fail
-        types: [jupyter]
-        exclude: tests/test_app/notebook.ipynb
-
-  # general formatting
-  - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.5
-    hooks:
-      - id: forbid-tabs
+  # All files
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 3.2.0
     hooks:
       - id: editorconfig-checker
         exclude_types: [jupyter]
-  - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.5.3
-    hooks:
-      - id: prettier
-        types_or: [yaml, markdown, html, css, scss, javascript, json]
-        args: ["--prose-wrap=always"]
-        exclude_types: [jupyter]
 
-  # rst formatting
+  # Spell checks
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.30.1
+    hooks:
+      - id: typos
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.4.1
+    hooks:
+      - id: codespell
+  - repo: local
+    hooks:
+      - id: disallow-caps
+        name: disallow improper capitalization
+        language: pygrep
+        entry: PyBind|Numpy|Cmake|CCache|Github|PyTest
+        exclude: .pre-commit-config.yaml
+
+  # Markdown files
+  - repo: https://github.com/hukkin/mdformat
+    rev: 0.7.22
+    hooks:
+      - id: mdformat
+        additional_dependencies:
+          - mdformat-gfm
+          - mdformat-frontmatter
+          - mdformat-footnote
+          - mdformat-gfm-alerts
+
+  # reStructuredText files
   - repo: https://github.com/PyCQA/doc8
     rev: v1.1.2
     hooks:
       - id: doc8
 
-  # python formatting and linting
+  # Python files
   - repo: https://github.com/psf/black-pre-commit-mirror
     rev: 25.1.0
     hooks:
@@ -113,67 +126,60 @@ repos:
         name: ruff isort
         args: ["--select", "I001", "--fix"]
       - id: ruff
-  - repo: local
-    hooks:
-      - id: mypy-local
-        name: mypy local
-        entry: uv run mypy
-        language: system
-        files: '(\.pyi?|^uv.lock$)'
-        pass_filenames: false
+        alias: ruff-check
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v1.15.0
     hooks:
       - id: mypy
+        name: mypy (without imports)
         args: ["--config-file", "", "--ignore-missing-imports"]
 
-  # validate schema
+  # Jupyter Notebook files
+  - repo: local
+    hooks:
+      - id: forbid-ipynb
+        name: forbid ipynb
+        entry: filenames must not end in .ipynb
+        language: fail
+        types: [jupyter]
+        exclude: tests/test_app/notebook.ipynb
+
+  # pyproject.toml
   - repo: https://github.com/abravalheri/validate-pyproject
     rev: v0.23
     hooks:
       - id: validate-pyproject
         additional_dependencies:
           - validate-pyproject-schema-store[all]
+
+  # YAML files
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+
+  # GitHub files
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.31.2
     hooks:
       - id: check-dependabot
       - id: check-github-actions
       - id: check-github-workflows
-      - id: check-gitlab-ci
       - id: check-readthedocs
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.7
     hooks:
       - id: actionlint
 
-  # shell scripts
+  # bash/sh shell scripts
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
 
-  # spell checks
-  - repo: https://github.com/crate-ci/typos
-    rev: v1.30.0
-    hooks:
-      - id: typos
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.1
-    hooks:
-      - id: codespell
-  - repo: local
-    hooks:
-      - id: disallow-caps
-        name: disallow improper capitalization
-        language: pygrep
-        entry: PyBind|Numpy|Cmake|CCache|Github|PyTest
-        exclude: .pre-commit-config.yaml
-
+# pre-commit.ci config
 ci:
   autoupdate_commit_msg: "chore: update pre-commit hooks"
   autofix_commit_msg: "style: pre-commit fixes"
-  skip: [mypy-local]
-  autoupdate_schedule: monthly
-
-exclude: ^.cruft.json|.copier-answers.yml$
+  skip: []
+  autoupdate_schedule: quarterly

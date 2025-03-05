@@ -1,30 +1,20 @@
 # nbcat
 
-<!-- prettier-ignore-start -->
 [![Tests][tests-badge]][tests-link]
 [![Documentation Status][rtd-badge]][rtd-link]
-
-[![PyPI version][pypi-version]][pypi-link]
-[![Conda-Forge][conda-badge]][conda-link]
-[![PyPI platforms][pypi-platforms]][pypi-link]
-
+[![uv][uv-badge]][uv-link]
+[![Ruff][ruff-badge]][ruff-link]
+[![Black][black-badge]][black-link]
+\
+[![PyPI version][pypi-version-badge]][pypi-link]
+[![PyPI platforms][pypi-platforms-badge]][pypi-link]
+[![Total downloads][pepy-badge]][pepy-link]
+\
+[![Made Using tsvikas/python-template][template-badge]][template-link]
 [![GitHub Discussion][github-discussions-badge]][github-discussions-link]
+[![PRs Welcome][prs-welcome-badge]][prs-welcome-link]
 
-
-[tests-badge]:              https://github.com/tsvikas/nbcat/actions/workflows/tests.yml/badge.svg
-[tests-link]:               https://github.com/tsvikas/nbcat/actions/workflows/tests.yml
-[conda-badge]:              https://img.shields.io/conda/vn/conda-forge/nbcat
-[conda-link]:               https://github.com/conda-forge/nbcat-feedstock
-[github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
-[github-discussions-link]:  https://github.com/tsvikas/nbcat/discussions
-[pypi-link]:                https://pypi.org/project/nbcat/
-[pypi-platforms]:           https://img.shields.io/pypi/pyversions/nbcat
-[pypi-version]:             https://img.shields.io/pypi/v/nbcat
-[rtd-badge]:                https://readthedocs.org/projects/nbcat/badge/?version=latest
-[rtd-link]:                 https://nbcat.readthedocs.io/en/latest/?badge=latest
-
-<!-- prettier-ignore-end -->
-<!-- SPHINX-START -->
+## Overview
 
 display your notebooks, in the terminal ![Demo](assets/DEMO.gif)
 
@@ -47,29 +37,37 @@ use `-f FORMAT` to specify the output format, default is `markdown`
 ## Development
 
 - install [git][install-git], [uv][install-uv].
-- git clone this repo
+- git clone this repo: `git clone tsvikas/nbcat.git`
 - run `uv run just prepare`
 
+### Code quality
+
+- use `uv run just format` to format the code.
+- use `uv run just lint` to see linting errors.
+- use `uv run just test` to see run tests.
+- use `uv run just check` to run all the checks (format, lint, test, and pre-commit).
+- Run a specific tool directly, with `uv run pytest`/`ruff`/`mypy`/`black`/...
+
+[black-badge]: https://img.shields.io/badge/code%20style-black-000000.svg
+[black-link]: https://github.com/psf/black
+[github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
+[github-discussions-link]: https://github.com/tsvikas/nbcat/discussions
 [install-git]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [install-uv]: https://docs.astral.sh/uv/getting-started/installation/
-
-## Code formatting
-
-- use `uv run black .` to format code
-- use
-  `git ls-files -z -- '*.md' '*.rst' '*.tex' '*.py' | xargs -0 uv run blacken-docs`
-  to format docs
-
-## Code quality
-
-- use `uv run ruff check .` to verify code quality
-- use `uv run mypy` to verify check typing
-- use `uv run pytest` to run tests
-
-## Build
-
-- run formatting, linting, and tests.
-- use `uv run dunamai from git` to see the current version
-- use `git tag -a vX.Y.Z -m "version vX.Y.Z" -e` to add a git tag
-- use `uv build` to build
-- push the tag with `git push origin tag vX.Y.Z`
+[pepy-badge]: https://img.shields.io/pepy/dt/nbcat
+[pepy-link]: https://pepy.tech/project/nbcat
+[prs-welcome-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
+[prs-welcome-link]: http://makeapullrequest.com
+[pypi-link]: https://pypi.org/project/nbcat/
+[pypi-platforms-badge]: https://img.shields.io/pypi/pyversions/nbcat
+[pypi-version-badge]: https://img.shields.io/pypi/v/nbcat
+[rtd-badge]: https://readthedocs.org/projects/nbcat/badge/?version=latest
+[rtd-link]: https://nbcat.readthedocs.io/en/latest/?badge=latest
+[ruff-badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
+[ruff-link]: https://github.com/astral-sh/ruff
+[template-badge]: https://img.shields.io/badge/%F0%9F%9A%80_Made_Using-tsvikas%2Fpython--template-gold
+[template-link]: https://github.com/tsvikas/python-template
+[tests-badge]: https://github.com/tsvikas/nbcat/actions/workflows/ci.yml/badge.svg
+[tests-link]: https://github.com/tsvikas/nbcat/actions/workflows/ci.yml
+[uv-badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json
+[uv-link]: https://github.com/astral-sh/uv
