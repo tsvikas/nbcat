@@ -6,10 +6,6 @@
 [![Ruff][ruff-badge]][ruff-link]
 [![Black][black-badge]][black-link]
 \
-[![PyPI version][pypi-version-badge]][pypi-link]
-[![PyPI platforms][pypi-platforms-badge]][pypi-link]
-[![Total downloads][pepy-badge]][pepy-link]
-\
 [![Made Using tsvikas/python-template][template-badge]][template-link]
 [![GitHub Discussion][github-discussions-badge]][github-discussions-link]
 [![PRs Welcome][prs-welcome-badge]][prs-welcome-link]
@@ -54,13 +50,8 @@ use `-f FORMAT` to specify the output format, default is `markdown`
 [github-discussions-link]: https://github.com/tsvikas/nbcat/discussions
 [install-git]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 [install-uv]: https://docs.astral.sh/uv/getting-started/installation/
-[pepy-badge]: https://img.shields.io/pepy/dt/nbcat
-[pepy-link]: https://pepy.tech/project/nbcat
 [prs-welcome-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg
 [prs-welcome-link]: http://makeapullrequest.com
-[pypi-link]: https://pypi.org/project/nbcat/
-[pypi-platforms-badge]: https://img.shields.io/pypi/pyversions/nbcat
-[pypi-version-badge]: https://img.shields.io/pypi/v/nbcat
 [rtd-badge]: https://readthedocs.org/projects/nbcat/badge/?version=latest
 [rtd-link]: https://nbcat.readthedocs.io/en/latest/?badge=latest
 [ruff-badge]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json
