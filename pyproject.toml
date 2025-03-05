@@ -39,6 +39,7 @@ dependencies = [
   "pygments >= 2.17",
   "typer >= 0.15",
   "nbconvert >= 7.16",
+  "ipython >= 8",
 ]
 
 [project.optional-dependencies]
