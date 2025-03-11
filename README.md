@@ -32,15 +32,17 @@ use `-f FORMAT` to specify the output format, default is `markdown`
 
 ## Development
 
+### Getting started
+
 - install [git][install-git], [uv][install-uv].
 - git clone this repo: `git clone tsvikas/nbcat.git`
 - run `uv run just prepare`
 
-### Code quality
+### Tests and code quality
 
 - use `uv run just format` to format the code.
 - use `uv run just lint` to see linting errors.
-- use `uv run just test` to see run tests.
+- use `uv run just test` to run tests.
 - use `uv run just check` to run all the checks (format, lint, test, and pre-commit).
 - Run a specific tool directly, with `uv run pytest`/`ruff`/`mypy`/`black`/...
 

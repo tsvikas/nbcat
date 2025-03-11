@@ -1,3 +1,5 @@
+enable-beta-ecosystems: true  # needed for uv support  {# TODO: remove when possible #}
+# see https://github.com/dependabot/dependabot-core/issues/10478#issuecomment-2691330949
 version: 2
 updates:
   - package-ecosystem: "gitsubmodule"
@@ -16,7 +18,7 @@ updates:
       github-actions:
         patterns:
           - "*"
-  - package-ecosystem: "pip"
+  - package-ecosystem: "uv"
     directory: "/"
     schedule:
       interval: "weekly"
