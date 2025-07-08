@@ -18,9 +18,9 @@ display your notebooks, in the terminal ![Demo](assets/DEMO.gif)
 this project is archived.
 you can use [euporie-preview](https://euporie.readthedocs.io/) instead.
 
-## Installation
+## Install
 
-use pipx to install:
+use pipx or uvx to install:
 
 ```bash
 pipx install git+https://github.com/tsvikas/nbcat.git
@@ -39,7 +39,9 @@ use `-f FORMAT` to specify the output format, default is `markdown`
 ### Getting started
 
 - install [git][install-git], [uv][install-uv].
-- git clone this repo: `git clone tsvikas/nbcat.git`
+- git clone this repo:
+  `git clone https://github.com/tsvikas/nbcat.git`
+  or `gh repo clone tsvikas/nbcat.git`
 - run `uv run just prepare`
 
 ### Tests and code quality
@@ -48,7 +50,34 @@ use `-f FORMAT` to specify the output format, default is `markdown`
 - use `uv run just lint` to see linting errors.
 - use `uv run just test` to run tests.
 - use `uv run just check` to run all the checks (format, lint, test, and pre-commit).
-- Run a specific tool directly, with `uv run pytest`/`ruff`/`mypy`/`black`/...
+- Run a specific tool directly, with
+  `uv run pytest`/`ruff`/`mypy`/`black`/`pre-commit`/...
+
+<!--- Badges to add after adding RTD documentation
+[![Documentation Status][rtd-badge]][rtd-link]
+
+[rtd-badge]: https://readthedocs.org/projects/nbcat/badge/?version=latest
+[rtd-link]: https://nbcat.readthedocs.io/en/latest/?badge=latest
+-->
+
+<!--- Badges to add after writing tests. Also follow the link to finish setup
+[![codecov][codecov-badge]][codecov-link]
+
+[codecov-badge]: https://codecov.io/gh/tsvikas/nbcat/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/tsvikas/nbcat
+-->
+
+<!--- Badges to add after uploading to PyPI
+[![PyPI version][pypi-version-badge]][pypi-link]
+[![PyPI platforms][pypi-platforms-badge]][pypi-link]
+[![Total downloads][pepy-badge]][pepy-link]
+
+[pepy-badge]: https://img.shields.io/pepy/dt/nbcat
+[pepy-link]: https://pepy.tech/project/nbcat
+[pypi-link]: https://pypi.org/project/nbcat/
+[pypi-platforms-badge]: https://img.shields.io/pypi/pyversions/nbcat
+[pypi-version-badge]: https://img.shields.io/pypi/v/nbcat
+-->
 
 [black-badge]: https://img.shields.io/badge/code%20style-black-000000.svg
 [black-link]: https://github.com/psf/black

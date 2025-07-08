@@ -6,19 +6,24 @@ exclude: "\
 
 # pre-commit.ci config
 ci:
+  # TODO: enable pre-commit.ci repository access
   autoupdate_commit_msg: "[pre-commit.ci] chore: update pre-commit hooks"
   autofix_commit_msg: "[pre-commit.ci] style: pre-commit fixes"
   skip: []
   autoupdate_schedule: quarterly
 
 repos:
-  # Python / pre-commit package versions
+  # Sync Python and pre-commit package versions
   # pyproject.toml -> uv.lock
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.6.12
+    rev: 0.7.19
     hooks:
       - id: uv-lock
   # uv.lock -> .pre-commit-config.yaml
+  - repo: https://github.com/tsvikas/sync-with-uv
+    rev: v0.2.0
+    hooks:
+      - id: sync-with-uv
   # .pre-commit-config.yaml -> .pre-commit-config.yaml
   - repo: https://github.com/pre-commit/sync-pre-commit-deps
     rev: v0.0.3
@@ -90,14 +95,14 @@ repos:
         exclude_types: [jupyter]
 
   # Spell checking
-  - repo: https://github.com/crate-ci/typos
-    rev: v1.31.1
-    hooks:
-      - id: typos
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
       - id: codespell
+  - repo: https://github.com/adhtruong/mirrors-typos
+    rev: v1.34.0
+    hooks:
+      - id: typos
   - repo: local
     hooks:
       - id: disallow-caps
@@ -119,9 +124,10 @@ repos:
 
   # reStructuredText files
   - repo: https://github.com/PyCQA/doc8
-    rev: v1.1.2
+    rev: v2.0.0
     hooks:
       - id: doc8
+        language_version: python3.12
 
   # Python files
   - repo: https://github.com/psf/black-pre-commit-mirror
@@ -135,20 +141,19 @@ repos:
         additional_dependencies:
           - black==25.1.0
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.4
+    rev: v0.12.2
     hooks:
-      - id: ruff
+      - id: ruff-check
         alias: ruff-isort
         name: ruff isort
         args: [--select, I001, --fix]
-      - id: ruff
-        alias: ruff-check
+      - id: ruff-check
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.15.0
+    rev: v1.16.1
     hooks:
       - id: mypy
         name: mypy (without imports)
-        args: [--config-file, "", --ignore-missing-imports]
+        args: [--config-file, "", --ignore-missing-imports, --disable-error-code=import-untyped]
 
   # Jupyter Notebook files
   - repo: local
@@ -161,22 +166,20 @@ repos:
         exclude: tests/test_app/notebook.ipynb
 
   # pyproject.toml
-  - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.24.1
+  - repo: https://github.com/henryiii/validate-pyproject-schema-store
+    rev: 2025.06.23
     hooks:
       - id: validate-pyproject
-        additional_dependencies:
-          - validate-pyproject-schema-store[all]
 
   # YAML files
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.37.0
+    rev: v1.37.1
     hooks:
       - id: yamllint
 
   # GitHub files
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.32.1
+    rev: 0.33.2
     hooks:
       - id: check-dependabot
       - id: check-github-actions

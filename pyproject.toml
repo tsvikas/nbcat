@@ -62,7 +62,7 @@ nbcat = "nbcat.cli:app"
 
 
 [tool.uv]
-required-version = "~=0.6.0"
+required-version = ">=0.5.19"
 default-groups = ["dev", "test", "typing"]
 
 
@@ -72,7 +72,7 @@ dev = [
   "rust-just ~=1.0",
   "pre-commit ~=4.0",
   "black ~=25.0",  # also update GHA version
-  "ruff ~=0.9.0",
+  "ruff ~=0.12.0",
 ]
 test = [
   "pytest ~=8.0",
@@ -88,7 +88,7 @@ test = [
   "pytest-datadir ~=1.0",
 ]
 typing = [
-  "mypy ~=1.15.0",
+  "mypy ~=1.16.0",
   "types-Pygments >=0",
 ]
 
@@ -111,10 +111,11 @@ addopts = [
   "--benchmark-disable",  # pytest-benchmark
   "--cov=src/nbcat",  # pytest-cov
   "--reverse",  # pytest-reverse
-  "--numprocesses=auto",  # pytest-xdist
+  # Uncomment to enable pytest-xdist for parallel execution,
+  # but note that it hides filenames in output.
+  # "--numprocesses=auto",  # pytest-xdist
 ]
 xfail_strict = true
-# CHECK those options:
 filterwarnings = [
   "error",
   "default::DeprecationWarning",
@@ -137,7 +138,7 @@ mypy_path = "stubs"
 warn_unused_configs = true
 # set the platform
 python_version = "3.9"
-# enable checks [last updated: mypy 1.15]
+# enable checks [last updated: mypy 1.16]
 strict = true
 disallow_any_explicit = true
 disallow_any_unimported = true
