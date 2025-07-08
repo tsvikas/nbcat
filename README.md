@@ -13,6 +13,11 @@
 
 display your notebooks, in the terminal ![Demo](assets/DEMO.gif)
 
+## Alternatives
+
+this project is archived.
+you can use [euporie-preview](https://euporie.readthedocs.io/) instead.
+
 ## Installation
 
 use pipx to install:
